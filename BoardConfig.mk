@@ -32,6 +32,7 @@ TARGET_NO_BOOTLOADER := true
 # Filesystems
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+
 # Kernel
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 TARGET_KERNEL_SOURCE := kernel/motorola/nicklaus
@@ -45,6 +46,9 @@ BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_MKBOOTIMG_ARGS := --kernel_offset $(BOARD_KERNEL_OFFSET) --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_TAGS_OFFSET)
 KERNEL_TOOLCHAIN_PREFIX := arm-linux-androidkernel-
 
+# Recovery
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+
 # Storage Allocations
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
@@ -53,15 +57,19 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 # TWRP Flags
 RECOVERY_VARIANT := twrp
 TW_THEME := portrait_hdpi
-TW_EXCLUDE_SUPERSU := true
-TW_INCLUDE_INJECTTWRP := false
-TW_DEVICE_VERSION := SamarV-1213
-TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
-TW_INCLUDE_FB2PNG := true
+TW_DEVICE_VERSION := Moto E4 Plus
 # TW_INCLUDE_FUSE_EXFAT := true
 # TW_INCLUDE_NTFS_3G := true
-TW_ALWAYS_RMRF := true
-TW_HAS_DOWNLOAD_MODE := false
-INTERNAL_LOCAL_CLANG_EXCEPTION_PROJECTS := external/busybox/
+# TW_ALWAYS_RMRF := true
+TW_INCLUDE_CRYPTO := true
 TW_NO_SCREEN_BLANK := true
-TW_CUSTOM_BATTERY_PATH := "/sys/devices/platform/battery/power_supply/battery"
+TW_MAX_BRIGHTNESS := 255
+TW_INCLUDE_FB2PNG := true
+TW_REBOOT_BOOTLOADER := true
+TW_REBOOT_RECOVERY := true
+TW_EXCLUDE_SUPERSU := true
+TW_USE_TOOLBOX := true
+TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
+
+# Vold
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file

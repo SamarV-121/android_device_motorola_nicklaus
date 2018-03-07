@@ -58,8 +58,6 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 RECOVERY_VARIANT := twrp
 TW_THEME := portrait_hdpi
 TW_DEVICE_VERSION := Moto E4 Plus
-# TW_INCLUDE_FUSE_EXFAT := true
-# TW_INCLUDE_NTFS_3G := true
 # TW_ALWAYS_RMRF := true
 TW_INCLUDE_CRYPTO := true
 TW_NO_SCREEN_BLANK := true
@@ -70,6 +68,11 @@ TW_REBOOT_RECOVERY := true
 TW_EXCLUDE_SUPERSU := true
 TW_USE_TOOLBOX := true
 TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
+TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+TW_INCLUDE_FUSE_EXFAT := true # exFAT FS Support
+TW_INCLUDE_FUSE_NTFS := true  # NTFS Support
 
-# Vold
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file
+# USB Mounting [Vold]
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/mt_usb/musb-hdrc.0.auto/gadget/lun0/file
+# TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file
+

@@ -3,6 +3,6 @@
     "remote":"github",
     "repository": "SamarV-121/android_kernel_motorola_nicklaus",
     "target_path": "kernel/motorola/nicklaus",
-    "revision":"lineage-15.1"
+    "revision":"oreo"
   }
 ]

@@ -19,9 +19,17 @@
 # Release name
 PRODUCT_RELEASE_NAME := nicklaus
 
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
+
+# Charger
+PRODUCT_PACKAGES += \
+   charger_res_images \
+   charger
 
 # Time Zone data for recovery
 # PRODUCT_COPY_FILES += \

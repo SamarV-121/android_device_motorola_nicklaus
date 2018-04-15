@@ -22,27 +22,12 @@ PRODUCT_RELEASE_NAME := nicklaus
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-# Boot animation
-TARGET_SCREEN_HEIGHT := 1280
-TARGET_SCREEN_WIDTH := 720
-
-# Charger
-PRODUCT_PACKAGES += \
-   charger_res_images \
-   charger
-
-# Time Zone data for recovery
-# PRODUCT_COPY_FILES += \
-#    bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
-
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := nicklaus
 PRODUCT_NAME := full_nicklaus
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := Moto E4 Plus
 PRODUCT_MANUFACTURER := motorola
-
-PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 # Available languages
 PRODUCT_LOCALES := en_US en_GB ru_RU uk_UA tr_TR sk_SK vi_VN fr_FR ar_EG

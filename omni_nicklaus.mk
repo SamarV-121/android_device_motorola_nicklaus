@@ -17,9 +17,6 @@
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
 
-# Get the prebuilt list of APNs
-$(call inherit-product, vendor/omni/config/gsm.mk)
-
 $(call inherit-product, device/motorola/nicklaus/full_nicklaus.mk)
 
 PRODUCT_NAME := omni_nicklaus

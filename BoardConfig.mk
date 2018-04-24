@@ -46,7 +46,7 @@ KERNEL_TOOLCHAIN_PREFIX := arm-linux-androidkernel-
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-# TWR
+# TWRP
 TW_THEME := portrait_hdpi
 TW_DEVICE_VERSION := Moto E4 Plus
 # TW_DEVICE_VERSION := $(shell date -u +"%Y%m%d_%H%M")
